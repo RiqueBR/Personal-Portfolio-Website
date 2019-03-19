@@ -36,7 +36,7 @@ export const query = graphql`
     }
 
     coverImg: imageSharp(original: { src: { regex: "/bckPhoto/" } }) {
-      sizes(maxWidth: 1200) {
+      sizes(maxWidth: 1000) {
         ...GatsbyImageSharpSizes
       }
     }

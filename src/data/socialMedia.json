@@ -1,0 +1,22 @@
+[
+    {
+        "name": "LinkedIn",
+        "img": "linkedin.svg",
+        "external_url": null
+    },
+    {
+        "name": "Github",
+        "img": "github.svg",
+        "external_url": null
+    },
+    {
+        "name": "email",
+        "img": "email.svg",
+        "external_url": null
+    },
+    {
+        "name": "Flicker",
+        "img": "flicker.svg",
+        "external_url": null
+    }
+]
