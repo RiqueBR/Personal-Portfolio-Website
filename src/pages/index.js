@@ -1,28 +1,49 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
-import Homepage from "./homepage.js"
+const IndexPage = ({data}) => {
 
-// import Layout from "../components/layout"
-// import Image from "../components/image"
-// import SEO from "../components/seo"
+  // const siteTitle = data.site.siteMetadata.title;
+  // const metaDescr = data.site.siteMetadata.description;
+  return (
+    <h1>something</h1>
+  )
 
-const IndexPage = () => (
-
-  <Homepage />
-
-)
+}
 
 export default IndexPage
 
+export const query = graphql`
+  query allImgsQuery {
+    site{
+      siteMetadata{
+        title
+        description
+      }
+    }
 
-  // <Layout>
-  //   <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-  //   <h1>Hi people</h1>
-  //   <p>Welcome to your new Gatsby site.</p>
-  //   <p>Now go build something great.</p>
-  //   <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-  //     <Image />
-  //   </div>
-  //   <Link to="/page-2/">Go to page 2</Link>
-  // </Layout>
+    coverImg: imageSharp(id: {regex: "/background-photo/"}){
+      sizes(maxWidth: 1200){
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    ProjectImgs: allFile(
+      sort: { order: ASC, fields: [absolutePath] }
+      filter: { relativePath: { regex: "/assets/.*.jpg/" } }
+    ) {
+      edges {
+        node {
+          relativePath
+          name
+          childImageSharp {
+            sizes(maxWidth: 320) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
+      }
+    }
+  }
+`;
