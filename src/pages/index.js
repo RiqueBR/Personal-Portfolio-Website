@@ -2,12 +2,24 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
-const IndexPage = ({data}) => {
+import Cover from "../components/cover"
 
-  // const siteTitle = data.site.siteMetadata.title;
-  // const metaDescr = data.site.siteMetadata.description;
+const IndexPage = ({data}) => {
+  
+  const siteTitle = data.site.siteMetadata.title;
+  const metaDescr = data.site.siteMetadata.description;
+  const { egdes: projectImgData } = data.projectImgs
+
   return (
-    <h1>something</h1>
+    <div>
+      
+      <Helmet>
+        <title>{siteTitle}</title>
+        <meta name="description" content={metaDescr}/>
+        {/* Add Favicon here */}
+      </Helmet>
+      <Cover coverImg={data.coverImg}/>
+    </div>
   )
 
 }
@@ -23,13 +35,13 @@ export const query = graphql`
       }
     }
 
-    coverImg: imageSharp(id: {regex: "/background-photo/"}){
-      sizes(maxWidth: 1200){
+    coverImg: imageSharp(original: { src: { regex: "/bckPhoto/" } }) {
+      sizes(maxWidth: 1200) {
         ...GatsbyImageSharpSizes
       }
     }
 
-    ProjectImgs: allFile(
+    projectImgs: allFile(
       sort: { order: ASC, fields: [absolutePath] }
       filter: { relativePath: { regex: "/assets/.*.jpg/" } }
     ) {
