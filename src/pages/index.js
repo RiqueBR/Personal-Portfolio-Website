@@ -18,7 +18,7 @@ const IndexPage = ({data}) => {
         <meta name="description" content={metaDescr}/>
         {/* Add Favicon here */}
       </Helmet>
-      <Cover coverImg={data.coverImg}/>
+      <Cover coverImg={data.coverImg} />
     </div>
   )
 
@@ -36,7 +36,7 @@ export const query = graphql`
     }
 
     coverImg: imageSharp(original: { src: { regex: "/bckPhoto/" } }) {
-      sizes(maxWidth: 1000) {
+      sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }

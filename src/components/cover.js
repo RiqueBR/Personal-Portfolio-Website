@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import Img from "gatsby-image";
 
+import SocialMedia from "./socialMedia"
 import "./cover.css";
 
 const Cover = ({coverImg}) => (
+    
+    
+    
     <div className="cover-wrapper">
     <div className="background-image">
        <Img className="hero-image"
@@ -21,8 +25,11 @@ const Cover = ({coverImg}) => (
     </div>
 
     <div className="hero-banner">
-        <h2>HELLO, MY NAME IS</h2>
-        <h1>Henrique Batista</h1>
+        <div className="text-area">
+            <h2>HELLO, MY NAME IS</h2>
+            <h1>Henrique Batista</h1>
+        </div>
+        <SocialMedia />
     </div>
     </div>
 )

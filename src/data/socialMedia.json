@@ -1,22 +1,23 @@
 [
-    {
+    {   
         "name": "LinkedIn",
-        "img": "linkedin.svg",
-        "external_url": null
+        "src": "../images/icons/linkedin.png",
+        "external_url": "https://www.linkedin.com/henrique-batista/"
     },
-    {
+    {   
         "name": "Github",
-        "img": "github.svg",
-        "external_url": null
+        "src": "../images/icons/github.png",
+        "external_url": "https://www.linkedin.com/henrique-batista/"
     },
-    {
+    {   
         "name": "email",
-        "img": "email.svg",
-        "external_url": null
+        "src": "../images/icons/email.png",
+        "external_url": "https://www.linkedin.com/henrique-batista/"
     },
     {
+       
         "name": "Flicker",
-        "img": "flicker.svg",
-        "external_url": null
+        "src": "../images/icons/flicker.png",
+        "external_url": "https://www.linkedin.com/henrique-batista/"
     }
 ]
